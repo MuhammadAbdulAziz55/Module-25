@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This</title>
+</head>
+<body>
+    <h1>This is not confused anymore</h1>
+    <p onclick="this.innerText = 'you clicked'">I am a paragraph.don't clicked me</p>
+    <script>
+        const myObj = {
+            name: 'Muhammad Ali',
+            getFulName: function(){
+                console.log(this);
+                return 'Mr. ', + this.name;
+            }
+        }
+        // myObj.getFulName();
+        const anotherObj = {
+            name: ' Ibna Omar '
+        }
+        anotherObj.getFulName = myObj.getFulName;
+        console.log(anotherObj.getFulName);
+        myObj.getFulName();
+        anotherObj.getFulName();
+
+    </script>
+</body>
+</html>
